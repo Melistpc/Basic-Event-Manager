@@ -6,6 +6,9 @@ TagManager:
   tags:
   - coin
   - enemy
+  - FxTemporaire
+  - Death
+  - retry
   layers:
   - Default
   - TransparentFX
