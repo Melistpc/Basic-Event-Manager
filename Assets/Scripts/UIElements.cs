@@ -31,7 +31,7 @@ public class UIElements : MonoBehaviour
         RetryButton.onClick.AddListener(OnMyRetryButtonClicked);
         
         //unityevent obje aktif mi değil mi umursamaz.eventmanager kullanmadan yapmadan hali bu;
-      //  OnRetry.AddListener(OnMyRetryButtonClicked);
+        OnRetry.AddListener(OnMyRetryButtonClicked);
         
        // EventManager.OnClickRetryButton.AddListener(ClickedRetry());
      
@@ -93,23 +93,23 @@ public class UIElements : MonoBehaviour
         {
             EventManager.OnPlayerDeath();
             
-           // EventManager.OnRetryButton();
+          
            
         }
     }
 
     private void OnMyRetryButtonClicked()
     {
-        PlayEffects("retry");
-        OnRetry.Invoke();
-        Debug.Log("Retry Button clicked");
-     
-        gameOverText.gameObject.SetActive(false);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        
-         
        
-        
+        Debug.Log("Retry Button clicked");
+        gameOverText.gameObject.SetActive(false);
+        ReLoadMyScene(SceneManager.GetActiveScene().buildIndex);
+
+    }
+
+    private void ReLoadMyScene(int buildIndex)
+    {
+        SceneManager.LoadScene(buildIndex);
     }
 
 
